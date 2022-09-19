@@ -8,7 +8,6 @@ const App = () => {
   const [newNumber, setNewNumber] = useState('')
 
   const handleInputNewName = (e) => {
-    e.preventDefault()
     setNewName(e.target.value)
   }
 
@@ -28,7 +27,6 @@ const App = () => {
 
   return (
     <div>
-      <div>debug: {newNumber}</div>
       <h2>Phonebook</h2>
       <form>
         <div>
