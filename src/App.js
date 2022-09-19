@@ -8,15 +8,15 @@ const App = () => {
     { name: 'Mary Poppendieck', number: '39-23-6423122', id: 4 }
   ]) 
 
-  const [filteredPersons, setFilteredPersons] = useState(persons)
   const [newName, setNewName] = useState('')
   const [newNumber, setNewNumber] = useState('')
   const [filterName, setFilterName] = useState('')
 
   const handleInputFilterName = (e) =>{
     setFilterName(e.target.value)
-    setFilteredPersons(persons.filter(person => person.name.toLowerCase().includes(e.target.value.toLowerCase())))
   }
+
+  const filteredPersons = persons.filter(person => person.name.toLowerCase().includes(filterName.toLowerCase()));
 
   const handleInputNewName = (e) => {
     setNewName(e.target.value)
