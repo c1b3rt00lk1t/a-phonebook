@@ -8,9 +8,15 @@ const App = () => {
 
   const handleInputNewName = (e) => {
     e.preventDefault()
-    console.log(e.target.value)
     setNewName(e.target.value)
+  }
 
+  const handleClickAddName = (e) => {
+    e.preventDefault()
+    if (!persons.filter(person => person.name === newName)[0]){
+      setPersons(persons.concat({name: newName}))
+      setNewName('')
+    }
   }
 
   return (
@@ -22,11 +28,13 @@ const App = () => {
           name: <input onChange={handleInputNewName} value={newName}/>
         </div>
         <div>
-          <button type="submit">add</button>
+          <button onClick={handleClickAddName} type="submit">add</button>
         </div>
       </form>
       <h2>Numbers</h2>
-      ...
+      <ul>
+        {persons.map(person => <li key={person.name}>{person.name}</li>)}
+      </ul>
     </div>
   )
 }
