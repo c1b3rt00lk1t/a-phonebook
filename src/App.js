@@ -5,10 +5,15 @@ const App = () => {
     { name: 'Arto Hellas' }
   ]) 
   const [newName, setNewName] = useState('')
+  const [newNumber, setNewNumber] = useState('')
 
   const handleInputNewName = (e) => {
     e.preventDefault()
     setNewName(e.target.value)
+  }
+
+  const handleInputNewNumber = (e) => {
+    setNewNumber(e.target.value)
   }
 
   const handleClickAddName = (e) => {
@@ -23,11 +28,14 @@ const App = () => {
 
   return (
     <div>
-      <div>debug: {newName}</div>
+      <div>debug: {newNumber}</div>
       <h2>Phonebook</h2>
       <form>
         <div>
           name: <input onChange={handleInputNewName} value={newName}/>
+        </div>
+        <div>
+          number: <input onChange={handleInputNewNumber} value={newNumber}/>
         </div>
         <div>
           <button onClick={handleClickAddName} type="submit">add</button>
