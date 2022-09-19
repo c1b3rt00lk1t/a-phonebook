@@ -9,6 +9,11 @@ const App = () => {
   ]) 
   const [newName, setNewName] = useState('')
   const [newNumber, setNewNumber] = useState('')
+  const [filterName, setFilterName] = useState('')
+
+  const handleInputFilterName = (e) =>{
+    setFilterName(e.target.value)
+  }
 
   const handleInputNewName = (e) => {
     setNewName(e.target.value)
@@ -33,7 +38,7 @@ const App = () => {
     <div>
       <h2>Phonebook</h2>
         <div>
-          filter shown with <input onChange={() =>{}} value={''}/>
+          filter shown with <input onChange={handleInputFilterName} value={filterName}/>
         </div>
       <h2>add a new</h2>
       <form>
