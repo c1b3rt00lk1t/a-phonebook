@@ -32,6 +32,10 @@ const App = () => {
   return (
     <div>
       <h2>Phonebook</h2>
+        <div>
+          filter shown with <input onChange={() =>{}} value={''}/>
+        </div>
+      <h2>add a new</h2>
       <form>
         <div>
           name: <input onChange={handleInputNewName} value={newName}/>
