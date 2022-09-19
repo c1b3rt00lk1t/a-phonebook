@@ -1,8 +1,14 @@
 import React from 'react'
 
-const Persons = () => {
+const Persons = ({filteredPersons}) => {
   return (
-    <div>Persons</div>
+    <ul>
+        {filteredPersons.map((person) => (
+          <li key={person.name}>
+            {person.name} {person.number}
+          </li>
+        ))}
+      </ul>
   )
 }
 
