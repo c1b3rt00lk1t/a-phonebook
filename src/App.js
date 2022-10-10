@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Filter from "./components/Filter";
 import PersonForm from "./components/PersonForm";
 import Persons from "./components/Persons";
@@ -41,6 +41,14 @@ const App = () => {
       alert(`${newName} is already added to phonebook`);
     }
   };
+
+
+  const getDataFromJSONServer = () => {};
+
+  useEffect(getDataFromJSONServer,[])
+
+
+
 
   return (
     <div>
