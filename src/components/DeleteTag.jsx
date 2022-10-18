@@ -1,9 +1,9 @@
 import React from 'react'
 
-const deleteTag = () => {
+const DeleteTag = () => {
   return (
     <div>deleteTag</div>
   )
 }
 
-export default deleteTag
+export default DeleteTag
