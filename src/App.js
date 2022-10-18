@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Filter from "./components/Filter";
 import PersonForm from "./components/PersonForm";
 import Persons from "./components/Persons";
-import { getAllAxios, createAxios } from "./services/personsServer";
+import { getAllAxios, createAxios,deleteAxios } from "./services/personsServer";
 
 
 const App = () => {
@@ -45,6 +45,10 @@ const App = () => {
     }
   };
 
+  const deletePerson = (id) => {
+    deleteAxios();
+  }
+
   const getPersonsFromServer = () => {
     getAllAxios().then(response => setPersons(response));
    };
@@ -69,7 +73,7 @@ const App = () => {
       />
 
       <h2>Numbers</h2>
-      <Persons filteredPersons={filteredPersons} />
+      <Persons filteredPersons={filteredPersons} deletePerson={deletePerson}/>
     </div>
   );
 };
