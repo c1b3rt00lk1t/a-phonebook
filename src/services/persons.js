@@ -2,18 +2,21 @@ import axios from "axios";
 
 const baseUrl = 'http://localhost:3001/persons';
 
-export const getAllAxios = () => {
+export const getAllAxios = async () => {
     const request = axios.get(baseUrl); 
-    return request.then(response => response.data);
+    const response = await request;
+    return response.data;
 }
 
-export const createAxios = newObject => {
+export const createAxios = async newObject => {
     const request = axios.post(baseUrl, newObject);
-    return request.then(response => response.data);
+    const response = await request;
+    return response.data;
 }
 
-export const updateAxios = (id, newObject) => {
+export const updateAxios = async (id, newObject) => {
     const request = axios.put(`${baseUrl}/${id}`, newObject);
-    return request.then(response => response.data);
+    const response = await request;
+    return response.data;
 }
 
