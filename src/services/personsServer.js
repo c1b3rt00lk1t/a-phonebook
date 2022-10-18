@@ -20,3 +20,8 @@ export const updateAxios = async (id, newObject) => {
     return response.data;
 }
 
+export const deleteAxios = async (id) => {
+    const request = axios.delete(`${baseUrl}/${id}`);
+    const response = await request;
+    return response.data;
+}
