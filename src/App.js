@@ -46,7 +46,7 @@ const App = () => {
   };
 
   const deletePerson = (id) => {
-    deleteAxios();
+    deleteAxios(id);
   }
 
   const getPersonsFromServer = () => {
