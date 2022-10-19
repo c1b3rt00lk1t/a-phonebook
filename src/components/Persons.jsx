@@ -6,7 +6,7 @@ const Persons = ({filteredPersons, deletePerson}) => {
     <ul>
         {filteredPersons.map((person) => (
           <li key={person.name}>
-            {person.name} {person.number} {person.id}<DeleteTag deletePerson={deletePerson} id={person.id} name={person.name}/>
+            {person.name} {person.number}<DeleteTag deletePerson={deletePerson} id={person.id} name={person.name}/>
           </li>
         ))}
       </ul>
