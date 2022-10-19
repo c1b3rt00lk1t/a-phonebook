@@ -35,11 +35,10 @@ const App = () => {
       alert('The name field is empty...');
 
     } else if (!persons.filter((person) => person.name === newName)[0]) {
-      setPersons(persons.concat(newPerson));
       setNewName("");
       setNewNumber("");
 
-      createAxios(newPerson);
+      createAxios(newPerson).then(response => setPersons(persons.concat(response)));
     } else {
       alert(`${newName} is already added to phonebook`);
     }
@@ -47,6 +46,7 @@ const App = () => {
 
   const deletePerson = (id) => {
     deleteAxios(id);
+    setPersons(persons.filter( person => person.id !== id));
   }
 
   const getPersonsFromServer = () => {

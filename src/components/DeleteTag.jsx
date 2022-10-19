@@ -3,7 +3,7 @@ import React from 'react'
 const DeleteTag = ({id, name, deletePerson}) => {
 
   const handleClick = () => {
-    if (window.confirm(`Delete ${name}`)){
+    if (window.confirm(`Delete ${name} with id ${id}`)){
       deletePerson(id);
     }
   }
