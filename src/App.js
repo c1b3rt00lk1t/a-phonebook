@@ -3,6 +3,7 @@ import Filter from "./components/Filter";
 import PersonForm from "./components/PersonForm";
 import Persons from "./components/Persons";
 import { getAllAxios, createAxios,deleteAxios, updateAxios } from "./services/personsServer";
+import './index.css';
 
 
 const App = () => {
