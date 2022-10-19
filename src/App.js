@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Filter from "./components/Filter";
 import PersonForm from "./components/PersonForm";
 import Persons from "./components/Persons";
-import { getAllAxios, createAxios,deleteAxios } from "./services/personsServer";
+import { getAllAxios, createAxios,deleteAxios, updateAxios } from "./services/personsServer";
 
 
 const App = () => {
@@ -31,16 +31,22 @@ const App = () => {
   const handleClickAddName = (e) => {
     e.preventDefault();
     const newPerson = { name: newName, number: newNumber };
+    const alreadyExistsPerson = persons.filter((person) => person.name === newName)[0];
+
     if (newPerson.name === ""){
       alert('The name field is empty...');
 
-    } else if (!persons.filter((person) => person.name === newName)[0]) {
+    } else if (!alreadyExistsPerson) {
       setNewName("");
       setNewNumber("");
 
       createAxios(newPerson).then(response => setPersons(persons.concat(response)));
     } else {
-      alert(`${newName} is already added to phonebook`);
+      if(window.confirm(`Update ${newName}`)){
+        setNewName("");
+        setNewNumber("");
+        updateAxios(alreadyExistsPerson.id, newPerson).then(response => setPersons(persons.map( person => person.id === response.id ? {...person, number: response.number} : person)));
+      }
     }
   };
 
