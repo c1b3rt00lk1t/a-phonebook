@@ -4,6 +4,7 @@ import PersonForm from "./components/PersonForm";
 import Persons from "./components/Persons";
 import { getAllAxios, createAxios,deleteAxios, updateAxios } from "./services/personsServer";
 import './index.css';
+import Notification from "./components/Notification";
 
 
 const App = () => {
@@ -65,6 +66,7 @@ const App = () => {
   return (
     <div>
       <h2>Phonebook</h2>
+      <Notification message="This will be a notification"/>
       <Filter
         handleInputFilterName={handleInputFilterName}
         filterName={filterName}
