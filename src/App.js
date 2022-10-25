@@ -66,7 +66,7 @@ const App = () => {
   return (
     <div>
       <h2>Phonebook</h2>
-      <Notification message="This will be a notification"/>
+      <Notification message={"This will be a notification"} color={"green"} display={true}/>
       <Filter
         handleInputFilterName={handleInputFilterName}
         filterName={filterName}
