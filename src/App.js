@@ -71,6 +71,10 @@ const App = () => {
                 : person
             )
           );
+          setNotificationMessage(`Modified ${response.name}`)
+          setNotificationColor('green');
+          setShowNotification(true);
+          setTimeout(() => setShowNotification(false), 4000)
         }
         );
       }
