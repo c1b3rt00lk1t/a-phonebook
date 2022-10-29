@@ -26,11 +26,6 @@
       "id": 8
     },
     {
-      "name": "asd",
-      "number": "asd",
-      "id": 9
-    },
-    {
       "name": "sgaerg",
       "number": "342423",
       "id": 10
@@ -39,11 +34,6 @@
       "name": "sadasdasd",
       "number": "asdsad",
       "id": 11
-    },
-    {
-      "name": "sdffsdfwef",
-      "number": "qweqwe",
-      "id": 12
     },
     {
       "name": "asdadasdasdasd",
@@ -56,29 +46,14 @@
       "id": 14
     },
     {
-      "name": "bdfvdfgd",
-      "number": "fdgdfg",
-      "id": 15
-    },
-    {
       "name": "lkjhgf",
       "number": "123-123",
       "id": 16
     },
     {
-      "name": "Test",
-      "number": "6789",
-      "id": 17
-    },
-    {
       "name": "John Doe Hall",
       "number": "345-345435345",
       "id": 18
-    },
-    {
-      "name": "Doris Alba",
-      "number": "5678",
-      "id": 19
     }
   ]
 }

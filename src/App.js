@@ -70,13 +70,21 @@ const App = () => {
                 ? { ...person, number: response.number }
                 : person
             )
-          );
+          )
+          
+          
+          ;
           setNotificationMessage(`Modified ${response.name}`)
           setNotificationColor('green');
           setShowNotification(true);
           setTimeout(() => setShowNotification(false), 4000)
         }
-        );
+        ).catch(error => {
+          alert(
+            `the person '${alreadyExistsPerson.name}' was already deleted from server`
+          )
+          setPersons(persons.filter(person => person.id !== alreadyExistsPerson.id))
+        });
       }
     }
   };
