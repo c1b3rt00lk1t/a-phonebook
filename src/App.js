@@ -70,10 +70,8 @@ const App = () => {
                 ? { ...person, number: response.number }
                 : person
             )
-          )
+          );
           
-          
-          ;
           setNotificationMessage(`Modified ${response.name}`)
           setNotificationColor('green');
           setShowNotification(true);
