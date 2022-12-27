@@ -71,7 +71,7 @@ const App = () => {
                 : person
             )
           );
-          
+
           setNotificationMessage(`Modified ${response.name}`)
           setNotificationColor('green');
           setShowNotification(true);
@@ -88,8 +88,9 @@ const App = () => {
   };
 
   const deletePerson = (id) => {
-    deleteAxios(id);
-    setPersons(persons.filter((person) => person.id !== id));
+    deleteAxios(id).then(res => 
+       setPersons(persons.filter((person) => person.id !== res.id))
+    );
   };
 
   const getPersonsFromServer = () => {
